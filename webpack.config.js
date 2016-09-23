@@ -1,5 +1,8 @@
+var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var precss       = require('precss');
+var autoprefixer = require('autoprefixer');
 
 module.exports ={
 	entry: "./src/index.js",
@@ -17,13 +20,18 @@ module.exports ={
 			},
 			{
 				test: /\.css/,
-				loader:  "style-loader!css-loader"
+				loader:  "style-loader!css-loader?modules&importLoaders=1!postcss-loader?sourceMap=inline"
 			}
 		]
 	},
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    })
-  ]
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: 'src/index.html'
+		}),
+		new webpack.LoaderOptionsPlugin({
+			postcss: function () {
+				return [autoprefixer, precss];
+			}
+		})
+	]
 }
