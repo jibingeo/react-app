@@ -15,12 +15,11 @@ module.exports ={
 		rules: [
 			{
 				test: /\.js/,
-				loader: "babel",
-        query: {compact: false}
+				loader: "babel?compact=false"
 			},
 			{
 				test: /\.css/,
-				loader:  "style-loader!css-loader?modules&importLoaders=1!postcss-loader?sourceMap=inline"
+				loader:  "style!css?modules&sourceMap&localIdentName=[name]-[local]-[hash:base64:5]!postcss?sourceMap=inline"
 			}
 		]
 	},
@@ -29,8 +28,12 @@ module.exports ={
 			template: 'src/index.html'
 		}),
 		new webpack.LoaderOptionsPlugin({
-			postcss: function () {
-				return [autoprefixer, precss];
+			options: {
+				context: __dirname,
+				postcss: [
+					autoprefixer,
+					precss
+				]
 			}
 		})
 	]
