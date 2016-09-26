@@ -1,12 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 
 import App from './components/App'
 import reducers from './reducers'
 
-let store = createStore(reducers)
+let middlewares = []
+let storeEnhancer = applyMiddleware(...middlewares)
+
+if(process.env.NODE_ENV != 'production') {
+	storeEnhancer = compose(
+		storeEnhancer,
+		window.devToolsExtension && window.devToolsExtension()
+	)
+}
+
+let store = createStore(
+	reducers, 
+	storeEnhancer
+)
 
 let component = (
 	<Provider store={store}>
