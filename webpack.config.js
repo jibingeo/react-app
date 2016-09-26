@@ -10,7 +10,6 @@ module.exports ={
 		path: path.join(__dirname, "dist"),
 		filename: "bundle.js"
 	},
-	devtool: "inline-source-map",
 	module: {
 		rules: [
 			{
@@ -19,7 +18,7 @@ module.exports ={
 			},
 			{
 				test: /\.css/,
-				loader:  "style!css?modules&sourceMap&localIdentName=[name]-[local]-[hash:base64:5]!postcss?sourceMap=inline"
+				loader:  "style!css?modules&localIdentName=[name]-[local]-[hash:base64:5]!postcss"
 			}
 		]
 	},
