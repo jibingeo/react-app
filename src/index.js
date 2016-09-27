@@ -9,7 +9,7 @@ import reducers from './reducers'
 let middlewares = []
 let storeEnhancer = applyMiddleware(...middlewares)
 
-if(process.env.NODE_ENV != 'production') {
+if(process.env.NODE_ENV !== 'production') {
 	storeEnhancer = compose(
 		storeEnhancer,
 		window.devToolsExtension && window.devToolsExtension()
