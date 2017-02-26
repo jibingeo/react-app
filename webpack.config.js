@@ -14,11 +14,11 @@ module.exports ={
 		rules: [
 			{
 				test: /\.js/,
-				loader: "babel?compact=false"
+				loader: "babel-loader?compact=false"
 			},
 			{
 				test: /\.css/,
-				loader:  "style!css?modules&localIdentName=[name]-[local]-[hash:base64:5]!postcss"
+				loader:  "style-loader!css-loader?modules&localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader"
 			}
 		]
 	},
