@@ -31,5 +31,11 @@
     "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.5"
+  },
+  "dependencies": {
+    "babel-watch": "https://github.com/jibingeo/babel-watch",
+    "chokidar": "^1.6.1",
+    "express": "^4.15.2",
+    "isomorphic-style-loader": "^2.0.0"
   }
 }
