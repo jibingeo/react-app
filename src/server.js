@@ -1,11 +1,14 @@
 import express from 'express';
+import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import app from './app';
+import Root from './Root';
+import Html from './Html';
 
 let router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send(ReactDOMServer.renderToString(app));
+  let html = ReactDOMServer.renderToString(Root);
+  res.send(ReactDOMServer.renderToStaticMarkup(<Html html={html} />));
 });
 
 export default router;

@@ -5,10 +5,10 @@ var precss = require('precss');
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/client.js',
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, 'dist/client'),
+    filename: 'app.js',
   },
   module: {
     rules: [
@@ -25,9 +25,6 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       CLIENT: JSON.stringify(true),
-    }),
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
     }),
     new webpack.LoaderOptionsPlugin({
       options: {

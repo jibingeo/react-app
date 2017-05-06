@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Sample react app",
   "scripts": {
-    "watch": "webpack-dev-server -d --inline --watch",
+    "watch": "webpack-dev-server -d --inline --watch --config webpack.client.js",
     "build": "webpack -p"
   },
   "author": "Jibin George <mail@jibingeorge.com>",
