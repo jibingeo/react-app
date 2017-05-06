@@ -7,6 +7,7 @@ var fs = require('fs');
 
 var nodeModules = {
   'react-dom/server': 'commonjs react-dom/server',
+  'isomorphic-style-loader/lib/withStyles': 'commonjs isomorphic-style-loader/lib/withStyles',
 };
 fs
   .readdirSync('node_modules')
@@ -40,6 +41,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
       SERVER: JSON.stringify(true),
     }),

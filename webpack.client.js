@@ -15,14 +15,16 @@ module.exports = {
       {
         test: /\.js/,
         loader: 'babel-loader?compact=false',
+        exclude: /node_modules/,
       },
       {
         test: /\.css/,
-        loader: 'style-loader!css-loader?modules&localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader',
+        loader: 'isomorphic-style-loader!css-loader?modules&localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader',
       },
     ],
   },
   plugins: [
+    new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
       CLIENT: JSON.stringify(true),
     }),

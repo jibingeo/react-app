@@ -1,4 +1,15 @@
 import ReactDOM from 'react-dom';
-import Root from './Root';
+import React from 'react';
+import root from './root';
+import AppProvider from './AppProvider';
 
-ReactDOM.render(Root, document.getElementById('root'));
+let context = {
+  insertCss(styles) {
+    styles._insertCss();
+  },
+};
+
+ReactDOM.render(
+  <AppProvider context={context}>{root}</AppProvider>,
+  document.getElementById('root')
+);

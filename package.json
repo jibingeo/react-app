@@ -33,9 +33,11 @@
     "webpack-dev-server": "^2.1.0-beta.5"
   },
   "dependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-watch": "https://github.com/jibingeo/babel-watch",
     "chokidar": "^1.6.1",
     "express": "^4.15.2",
-    "isomorphic-style-loader": "^2.0.0"
+    "isomorphic-style-loader": "^2.0.0",
+    "prop-types": "^15.5.8"
   }
 }
