@@ -1,5 +1,12 @@
 :global {
   body{
     margin: 0;
+    background: #f5f7fa;
   }
+}
+.header {
+  padding: 10px;
+  height: 30px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
 }
