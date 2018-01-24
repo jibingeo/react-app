@@ -30,12 +30,16 @@ module.exports ={
 					},
 					'postcss-loader'
 				]
+			},
+			{
+				test: /\.jade$/,
+				use: ['jade-loader']
 			}
 		]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.join(__dirname, "src/index.html"),
+			template: path.join(__dirname, "src/index.jade"),
 			minify: isProd && { collapseWhitespace: true }
 		})
 	]
