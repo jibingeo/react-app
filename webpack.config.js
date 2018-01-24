@@ -39,8 +39,7 @@ module.exports ={
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.join(__dirname, "src/index.jade"),
-			minify: isProd && { collapseWhitespace: true }
+			template: path.join(__dirname, "src/index.jade")
 		})
 	],
 	devServer:{
