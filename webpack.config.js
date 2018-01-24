@@ -5,14 +5,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const isProd = process.env.NODE_ENV==='production';
 const isDev = !isProd;
 
-const chunkHash = isProd ? '.[chunkhash:8]' : '';
+const chunkHash = isProd ? '[chunkhash:8]' : '[name]';
 
 module.exports ={
 	entry: "./src/index.js",
 	output: {
 		path: path.join(__dirname, "dist"),
-		filename: `[name]${chunkHash}.js`,
-		chunkFilename: `[name]${chunkHash}.js`
+		filename: `${chunkHash}.js`,
+		chunkFilename: `${chunkHash}.js`
 	},
 	module: {
 		rules: [
@@ -42,5 +42,8 @@ module.exports ={
 			template: path.join(__dirname, "src/index.jade"),
 			minify: isProd && { collapseWhitespace: true }
 		})
-	]
+	],
+	devServer:{
+		port: 8080
+	}
 };
