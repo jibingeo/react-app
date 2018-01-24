@@ -42,7 +42,8 @@ module.exports ={
 			template: path.join(__dirname, "src/index.jade")
 		})
 	],
-	devServer:{
-		port: 8080
-	}
+	devServer: {
+		port: 8080,
+		host: '0.0.0.0',
+	},
 };
