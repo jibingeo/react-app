@@ -13,6 +13,7 @@ module.exports = {
 		path: path.join(__dirname, 'dist'),
 		filename: `${chunkHash}.js`,
 		chunkFilename: `${chunkHash}.js`,
+		publicPath: "/"
 	},
 	module: {
 		rules: [
@@ -45,5 +46,6 @@ module.exports = {
 	devServer: {
 		port: PORT,
 		host: '0.0.0.0',
+		historyApiFallback: true,
 	},
 };
