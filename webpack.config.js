@@ -36,6 +36,17 @@ module.exports = {
 				test: /\.jade$/,
 				use: ['jade-loader'],
 			},
+			{
+				test: /\.(png|jpg|gif|svg)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[hash:8].[ext]'
+						}
+					}
+				]
+			},
 		],
 	},
 	plugins: [
